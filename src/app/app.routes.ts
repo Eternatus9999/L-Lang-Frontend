@@ -12,7 +12,7 @@ export const routes: Routes = [
         component: DashboardComponent
     },
     {
-        path: "attemp-quiz",
+        path: "dashboard/quiz",
         component: QuizpageComponent
     }
 ];

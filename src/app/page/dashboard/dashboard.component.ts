@@ -10,5 +10,5 @@ import { HeadingComponent } from '../../components/heading/heading.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  
 }

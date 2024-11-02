@@ -4,10 +4,14 @@
         <div class="row">
             <div class="col-6"></div>
             <div class="col">
-                <input type="text" name="" id="">
+                <input type="text" name="" id="" disabled>{{quiz}}
             </div>
         </div>
-        <div class="row"></div>
+        <div class="row">
+            <div class="col">
+                <button (click)="getQuiz()">Click</button>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6"></div>
             <div class="col">
