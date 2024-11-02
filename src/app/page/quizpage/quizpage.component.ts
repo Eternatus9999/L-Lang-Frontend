@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './quizpage.component.html',
   styleUrl: './quizpage.component.css'
 })
-export class QuizpageComponent {
+export class QuizpageComponent{
   public quiz:any ={
     quiz_id: "",
     player_id: "",
@@ -21,6 +21,9 @@ export class QuizpageComponent {
     mark: 0,
     words:[]
   };
+
+  public answer:String = "";
+  public question:String ="";
   constructor(private http:HttpClient){
   }
   
@@ -29,5 +32,11 @@ export class QuizpageComponent {
       this.quiz = data;
       console.log(this.quiz.words);
     });
+  }
+
+  public check(){
+      if(this.quiz.words[0].pronunciation == this.answer){
+        alert("Correct!!!");
+      }
   }
 }

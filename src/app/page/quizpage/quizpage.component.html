@@ -2,20 +2,26 @@
     <app-heading></app-heading>
     <div class="container mt-5">
         <div class="row">
+            <div class="col">
+                <a href="#" routerLink="../">←</a>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-6"></div>
             <div class="col">
                 <input type="text" name="" id="" disabled value="">
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <button (click)="getQuiz()">Click</button>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-6"></div>
             <div class="col">
-                <input type="text" name="" id="">
+                <input type="text" name="" id="" placeholder="Answer" [(ngModel)]="answer">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-8"></div>
+            <div class="col">
+                <button (click)="check()">Click</button>
             </div>
         </div>
     </div>
