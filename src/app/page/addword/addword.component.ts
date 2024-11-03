@@ -3,11 +3,12 @@ import { HeadingComponent } from '../../components/heading/heading.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-addword',
   standalone: true,
-  imports: [HeadingComponent,FormsModule,CommonModule],
+  imports: [HeadingComponent,FormsModule,CommonModule,RouterLink],
   templateUrl: './addword.component.html',
   styleUrl: './addword.component.css'
 })

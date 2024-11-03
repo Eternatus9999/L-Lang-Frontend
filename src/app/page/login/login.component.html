@@ -10,7 +10,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <input type="text" name="" id="" placeholder="Username"
-                                        class="form-control me-3 mt-5 ms-4">
+                                        class="form-control me-3 mt-5 ms-4" [(ngModel)]="name">
                                 </div>
                             </div>
                             <div class="row">
@@ -19,8 +19,8 @@
                                         class="form-control me-3 mt-3 mb-5 ms-4">
                                 </div>
                             </div>
-                            <button class="btn btn-primary ms-5">Register</button>
-                            <button class="btn btn-light me-5 ms-5 ps-4 pe-4" routerLink="dashboard">Login</button>
+                            <button class="btn btn-primary ms-5" (click)="sendName()">Register</button>
+                            <button class="btn btn-light me-5 ms-5 ps-4 pe-4" routerLink="dashboard" (click)="sendName()">Login</button>
                         </div>
                     </div>
                 </div>

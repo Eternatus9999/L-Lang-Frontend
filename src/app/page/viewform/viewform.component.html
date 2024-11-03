@@ -4,25 +4,40 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col">
-                <a href="#" routerLink="../"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                        fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <a href="#" routerLink="../">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                        class="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                    </svg></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8"></div>
-            <div class="col">
-                <h1 class="player">
-                    Chathusha
-                </h1>
+                    </svg>
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col">
-               
+                <h1 class="player">Id : {{player.id}}</h1>
+                <h1 class="player">Name : {{player.name}}</h1>
+                <h1 class="player">Email : {{player.email}}</h1>
+                <h1 class="player">Gender : {{player.gender}}</h1>
+                <h1 class="player">Marks : {{player.marks}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col">
+                <button class="btn" routerLink="">Words</button>
+            </div>
+            <div class="col">
+                <button class="btn" routerLink="">Quizzes</button>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-5 m-5"></div>
+            <div class="col m-5">
+                <p class="ContactUs">
+                    Contact Us Via Facebook or Instergram for Issues with L_Lang
+                </p>
             </div>
         </div>
     </div>

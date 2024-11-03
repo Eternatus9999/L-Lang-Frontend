@@ -32,23 +32,24 @@ export class QuizpageComponent {
   }
   public i: any = 0;
   public total:any = 0;
+  public id:any = 0;
 
   public answer: String = "";
   public question: String = "";
   constructor(private http: HttpClient) {
     this.getQuiz();
+    this.http.get(`http://localhost:8080/player/get-player-name/${localStorage.getItem("Name")}`).subscribe((data)=>{
+      this.player = data;
+    });
   }
 
   public getQuiz() {
     // if (this.quiz.quiz_id == "") {
-    //   this.http.get("http://localhost:8080/quiz/create-quiz/P001").subscribe((data) => {
+    //   this.http.get(`http://localhost:8080/quiz/create-quiz/${player.id}`).subscribe((data) => {
     //     this.quiz = data;
     //     this.start();
     //   });
     // }
-    // this.http.get(`http://localhost:8080/player/get-player-id/${this.quiz.player_id}`).subscribe((data)=>{
-    //   this.player = data;
-    // });
   }
   public start() {
     if (this.i < 10) {
