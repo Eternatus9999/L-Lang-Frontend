@@ -8,35 +8,80 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-quizpage',
   standalone: true,
-  imports: [RouterLink,HeadingComponent,FormsModule,CommonModule],
+  imports: [RouterLink, HeadingComponent, FormsModule, CommonModule],
   templateUrl: './quizpage.component.html',
   styleUrl: './quizpage.component.css'
 })
-export class QuizpageComponent{
-  public quiz:any ={
+export class QuizpageComponent {
+  public quiz: any = {
     quiz_id: "",
     player_id: "",
     date: "",
     grade: "",
     mark: 0,
-    words:[]
+    words: []
   };
+  public i: any = 0;
+  public total:any = 0;
 
-  public answer:String = "";
-  public question:String ="";
-  constructor(private http:HttpClient){
+  public answer: String = "";
+  public question: String = "";
+  constructor(private http: HttpClient) {
+    this.getQuiz();
   }
-  
-  public getQuiz(){
-    this.http.get("http://localhost:8080/quiz/create-quiz/P001").subscribe((data)=>{
-      this.quiz = data;
-      console.log(this.quiz.words);
+
+  public getQuiz() {
+    // if (this.quiz.quiz_id == "") {
+    //   this.http.get("http://localhost:8080/quiz/create-quiz/P001").subscribe((data) => {
+    //     this.quiz = data;
+    //     this.start();
+    //   });
+    // }
+  }
+  public start() {
+    if (this.i < 10) {
+      this.question = this.quiz.words[this.i].name;
+      this.i++;
+    }
+    else{
+      this.finished();
+    }
+  }
+  public check() {
+    if (this.quiz.words[this.i - 1].pronunciation == this.answer) {
+      alert("Correct!!!");
+      this.quiz.words[this.i-1].status = "Correct";
+      this.total+=1;
+    }
+    else {
+      alert("Incorrect!!!");
+      this.quiz.words[this.i-1].status = "Incorrect";
+    }
+    this.start()
+  }
+  public finished(){
+    this.quiz.mark = this.total;
+    this.quiz.grade = this.checkGrade(this.total);
+    this.http.put("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe((data)=>{
+      alert("Quiz Is Completed!");
     });
   }
 
-  public check(){
-      if(this.quiz.words[0].pronunciation == this.answer){
-        alert("Correct!!!");
-      }
+  public checkGrade(number:any):any{
+    if(number>8){
+      return "A";
+    }
+    else if(number>6){
+      return "B";
+    }
+    else if(number>4){
+      return "C";
+    }
+    else if(number>2){
+      return "S";
+    }
+    else{
+      return "F";
+    }
   }
 }
