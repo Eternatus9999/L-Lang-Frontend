@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-quizpage',
@@ -21,6 +22,14 @@ export class QuizpageComponent {
     mark: 0,
     words: []
   };
+  public player:any ={
+    id: 0,
+    name: "",
+    email: "",
+    password: "",
+    gender: "",
+    marks: 0,
+  }
   public i: any = 0;
   public total:any = 0;
 
@@ -37,6 +46,9 @@ export class QuizpageComponent {
     //     this.start();
     //   });
     // }
+    // this.http.get(`http://localhost:8080/player/get-player-id/${this.quiz.player_id}`).subscribe((data)=>{
+    //   this.player = data;
+    // });
   }
   public start() {
     if (this.i < 10) {
@@ -62,9 +74,13 @@ export class QuizpageComponent {
   public finished(){
     this.quiz.mark = this.total;
     this.quiz.grade = this.checkGrade(this.total);
-    this.http.put("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe((data)=>{
+    this.http.put("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe(data=>{
       alert("Quiz Is Completed!");
     });
+    this.player.marks+=this.total;
+    this.http.put("http://localhost:8080/player/update-player",this.player).subscribe(data=>{
+      alert("Your marks added to your profile!");
+    })
   }
 
   public checkGrade(number:any):any{
