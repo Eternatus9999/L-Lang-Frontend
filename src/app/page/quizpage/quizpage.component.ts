@@ -44,12 +44,12 @@ export class QuizpageComponent {
   }
 
   public getQuiz() {
-    // if (this.quiz.quiz_id == "") {
-    //   this.http.get(`http://localhost:8080/quiz/create-quiz/${player.id}`).subscribe((data) => {
-    //     this.quiz = data;
-    //     this.start();
-    //   });
-    // }
+    if (this.quiz.quiz_id == "") {
+      this.http.get(`http://localhost:8080/quiz/create-quiz/${this.player.id}`).subscribe((data) => {
+        this.quiz = data;
+        this.start();
+      });
+    }
   }
   public start() {
     if (this.i < 10) {
