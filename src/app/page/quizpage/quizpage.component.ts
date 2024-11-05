@@ -37,10 +37,11 @@ export class QuizpageComponent {
   public answer: String = "";
   public question: String = "";
   constructor(private http: HttpClient) {
-    this.getQuiz();
     this.http.get(`http://localhost:8080/player/get-player-name/${localStorage.getItem("Name")}`).subscribe((data)=>{
       this.player = data;
+      this.getQuiz();
     });
+    
   }
 
   public getQuiz() {
@@ -70,13 +71,23 @@ export class QuizpageComponent {
       alert("Incorrect!!!");
       this.quiz.words[this.i-1].status = "Incorrect";
     }
+    const textField = document.getElementById('answer') as HTMLInputElement
+    textField.value = "";
     this.start()
   }
   public finished(){
     this.quiz.mark = this.total;
     this.quiz.grade = this.checkGrade(this.total);
-    this.http.put("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe(data=>{
+    this.http.post("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe(data=>{
       alert("Quiz Is Completed!");
+      this.quiz ={
+        quiz_id: "",
+        player_id: "",
+        date: "",
+        grade: "",
+        mark: 0,
+        words: []
+      };
     });
     this.player.marks+=this.total;
     this.http.put("http://localhost:8080/player/update-player",this.player).subscribe(data=>{

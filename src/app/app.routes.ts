@@ -4,6 +4,7 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { QuizpageComponent } from './page/quizpage/quizpage.component';
 import { AddwordComponent } from './page/addword/addword.component';
 import { ViewformComponent } from './page/viewform/viewform.component';
+import { WordviewformComponent } from './page/wordviewform/wordviewform.component';
 
 export const routes: Routes = [
     {
@@ -24,5 +25,9 @@ export const routes: Routes = [
     {
         path: "dashboard/view",
         component: ViewformComponent
+    },
+    {
+        path: "dashboard/wordview",
+        component: WordviewformComponent
     }
 ];
