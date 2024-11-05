@@ -14,19 +14,19 @@
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-7"></div>
+            <div class="col-8"></div>
             <div class="col">
-                <input type="text" class="form-control" id="searchbar" [(ngModel)]="word_name">
+                <input type="text" class="form-control" id="searchbar" [(ngModel)]="word_name" placeholder="English Word">
             </div>
             <div class="col ms-5">
                 <button class="btn" (click)="search()">Search</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-5"></div>
-            <div class="col">
+            <div class="col-7"></div>
+            <div class="col-4">
                 <ul class="list-group">
-                    <li class="list-group-item">{{word.name}} - {{word.pronunciation}}</li>
+                    <li class="list-group-item list-item"><pre>{{word.name}}   =   {{word.pronunciation}}</pre></li>
                 </ul>
             </div>
         </div>

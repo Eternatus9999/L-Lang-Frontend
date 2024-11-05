@@ -15,8 +15,15 @@ a{
     color: white;
 }
 button{
-    font-size: 20px;
-    border-radius: 20px;
-    width: 30%;
+    font-size: 30px;
+    border-radius: 30px;
+    width: 50%;
     background-color: #A55EEA;
+}
+.list-item{
+    font-size: 30px;
+    text-align: center;
+}
+#searchbar{
+    font-size: 30px;
 }

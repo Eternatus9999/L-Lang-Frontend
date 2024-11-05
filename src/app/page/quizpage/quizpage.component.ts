@@ -88,11 +88,12 @@ export class QuizpageComponent {
         mark: 0,
         words: []
       };
-    });
-    this.player.marks+=this.total;
-    this.http.put("http://localhost:8080/player/update-player",this.player).subscribe(data=>{
+      this.player.marks+=this.total;
+      this.http.put("http://localhost:8080/player/update-player",this.player).subscribe(data=>{
       alert("Your marks added to your profile!");
-    })
+      })
+    });
+    
   }
 
   public checkGrade(number:any):any{
