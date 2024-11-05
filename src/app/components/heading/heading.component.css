@@ -5,13 +5,6 @@
     background-position: center;
     background-image: url("../../../assets/image/heading-banner.png");
 }
-.img{
-    width: 30%;
-    height: 10vh;
-    background-size: cover;
-    background-position: right;
-    background-image: url("../../../assets/image/Profile\ pic.png");
-}
 .Username{
     color: black;
     transform: translateY(10px);

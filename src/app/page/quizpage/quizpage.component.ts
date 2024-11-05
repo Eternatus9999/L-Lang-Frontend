@@ -78,7 +78,7 @@ export class QuizpageComponent {
   public finished(){
     this.quiz.mark = this.total;
     this.quiz.grade = this.checkGrade(this.total);
-    this.http.post("http://localhost:8080/quiz/update-quiz",this.quiz).subscribe(data=>{
+    this.http.post("http://localhost:8080/quiz/add-quiz",this.quiz).subscribe(data=>{
       alert("Quiz Is Completed!");
       this.quiz ={
         quiz_id: "",
