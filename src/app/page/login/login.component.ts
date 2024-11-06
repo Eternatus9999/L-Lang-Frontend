@@ -25,16 +25,17 @@ export class LoginComponent {
   public sendName(){
     for (let i = 0; i < this.players.length; i++) {
       const element = this.players[i];
-      if(!(element.name === this.name)){
+      if(!(element.name == this.name)){
         this.showError("Name Doesn't exist");
       }
-      else if(!(element.password === this.password)){
+      else if(!(element.password == this.password)){
         this.showError("Wrong Password");
       }
       else{
         localStorage.setItem("Name",this.name);
         this.showMessage("Login Successfull");
         this.router.navigate(["/dashboard"]);
+        break;
       }
       
     }

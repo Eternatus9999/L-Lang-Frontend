@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { HeadingComponent } from '../../components/heading/heading.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { subscribe } from 'diagnostics_channel';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quizpage',
@@ -36,7 +36,7 @@ export class QuizpageComponent {
 
   public answer: String = "";
   public question: String = "";
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     this.http.get(`http://localhost:8080/player/get-player-name/${localStorage.getItem("Name")}`).subscribe((data)=>{
       this.player = data;
       this.getQuiz();
@@ -63,12 +63,12 @@ export class QuizpageComponent {
   }
   public check() {
     if (this.quiz.words[this.i - 1].pronunciation == this.answer) {
-      alert("Correct!!!");
+      this.showMessage("Correct!");
       this.quiz.words[this.i-1].status = "Correct";
       this.total+=1;
     }
     else {
-      alert("Incorrect!!!");
+      this.showError("Incorrect!");
       this.quiz.words[this.i-1].status = "Incorrect";
     }
     const textField = document.getElementById('answer') as HTMLInputElement
@@ -79,7 +79,6 @@ export class QuizpageComponent {
     this.quiz.mark = this.total;
     this.quiz.grade = this.checkGrade(this.total);
     this.http.post("http://localhost:8080/quiz/add-quiz",this.quiz).subscribe(data=>{
-      alert("Quiz Is Completed!");
       this.quiz ={
         quiz_id: "",
         player_id: "",
@@ -88,9 +87,11 @@ export class QuizpageComponent {
         mark: 0,
         words: []
       };
+      this.showMessage("Quiz Completed");
+      this.router.navigate(["../dashboard"]);
       this.player.marks+=this.total;
       this.http.put("http://localhost:8080/player/update-player",this.player).subscribe(data=>{
-      alert("Your marks added to your profile!");
+        
       })
     });
     
@@ -112,5 +113,20 @@ export class QuizpageComponent {
     else{
       return "F";
     }
+  }
+
+  private showMessage(message: string){
+    swal.fire({
+      title: message,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+  }
+  private showError(message: string) {
+    swal.fire({
+      title: message,
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
   }
 }

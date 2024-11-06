@@ -17,7 +17,7 @@
             <div class="col-7"></div>
             <div class="col-4">
                     <ul class="list-group">
-                        <li *ngFor="let quizlist of quizlist; index as i" class="list-group-item list-item"><pre>{{quizlist.quiz_id}}      {{quizlist.grade}}      {{quizlist.mark}}/10</pre></li>
+                        <li *ngFor="let quizlist of quizlist; index as i" class="list-group-item list-item"><pre>{{i+1}}      {{quizlist.grade}}      {{quizlist.mark}}/10  {{quizlist.date}}</pre></li>
                     </ul>
             </div>
         </div>
