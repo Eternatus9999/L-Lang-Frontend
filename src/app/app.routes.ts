@@ -6,11 +6,16 @@ import { AddwordComponent } from './page/addword/addword.component';
 import { ViewformComponent } from './page/viewform/viewform.component';
 import { WordviewformComponent } from './page/wordviewform/wordviewform.component';
 import { ViewquizformComponent } from './page/viewquizform/viewquizform.component';
+import { RegisterComponent } from './page/register/register.component';
 
 export const routes: Routes = [
     {
         path: "",
         component: LoginComponent
+    },
+    {
+        path: "register",
+        component: RegisterComponent
     },
     {   path: "dashboard",
         component: DashboardComponent

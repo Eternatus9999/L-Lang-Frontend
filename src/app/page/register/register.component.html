@@ -1,0 +1,52 @@
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col m-0"><img src="Login-Register.png.png" alt="login image" class="m-0"></div>
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-3 m-0"></div>
+                    <div class="col">
+                        <div class="card align-items-center" style="width: 30rem;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="text" name="" id="" placeholder="Username"
+                                            class="form-control me-3 mt-5 ms-4" [(ngModel)]="name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="text" name="" id="" placeholder="Email"
+                                            class="form-control me-3 mt-3 ms-4" [(ngModel)]="email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="password" name="" id="" placeholder="Password"
+                                            class="form-control me-3 mt-3 ms-4" [(ngModel)]="password">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="password" name="" id="" placeholder="Re-Password"
+                                            class="form-control me-3 mt-3 mb-5 ms-4" [(ngModel)]="check_password">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="radio" name="gender" value="Male" class="ms-4 mb-5" [(ngModel)]="gender">Male
+                                        <input type="radio" name="gender" value="Female" class="ms-4 mb-5" [(ngModel)]="gender">Female
+                                        <input type="radio" name="gender" value="Other" class="ms-4 mb-5" [(ngModel)]="gender">Other
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary ms-5" (click)="sendName()">Register</button>
+                                <button class="btn btn-light me-5 ms-5 ps-4 pe-4" routerLink="../">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
