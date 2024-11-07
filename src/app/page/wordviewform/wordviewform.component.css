@@ -14,10 +14,26 @@ a{
     text-decoration: none;
     color: white;
 }
+.col-md-3 button{
+    margin-top: 0px;
+    margin-left: 10px;
+}
+.col-lg-2 button{
+    margin-top: 0px;
+    margin-left: 100px;
+}
+.col-xxl-6 button{
+    margin-top: 0px;
+    margin-left: 300px;
+}
+.col-6 button{
+    margin-top: 30px;
+    margin-left: 180px;
+}
 button{
+    margin-top: 0px;
     font-size: 30px;
-    border-radius: 30px;
-    width: 50%;
+    border-radius: 20px;
     background-color: #A55EEA;
 }
 .list-item{

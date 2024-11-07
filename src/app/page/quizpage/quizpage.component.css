@@ -16,8 +16,18 @@ input{
     height: 10dvh;
     font-size: 60px;
 }
+.col-lg-7 button{
+    margin-left: 100px;
+}
+.col-xxl-6 button{
+    margin-left: 160px;
+}
+.col-xl-4 button{
+    margin-left: 100px;
+}
 button{
     margin-top: 30px;
+    margin-left: 150px;
     font-size: 50px;
     border-radius: 20px;
     width: 50%;
