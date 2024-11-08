@@ -21,19 +21,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-2 col-sm">
+            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-4 col-sm">
                 <button class="btn" routerLink="add">Add</button>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-2 col-sm">
+            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-4 col-sm">
                 <button class="btn" routerLink="quiz">Attempt</button>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-2 col-sm">
+            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-4 col-sm">
                 <button class="btn" routerLink="view">View</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-5 col-xxl col-lg col-md col-sm"></div>
-            <div class="col col-xxl col-lg col-md col-sm">
+        <div class="row mt-5">
+            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-3">
                 <ul class="list-group">
                     <li *ngFor="let player of player; index as i" class="list-group-item">{{player.name}}  {{player.marks}}</li>
                 </ul>

@@ -12,7 +12,7 @@ import { NgFor } from '@angular/common';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  public player:any = [];
+  public player:any = [{}];
 
   constructor(http:HttpClient){
     this.player = http.get("http://localhost:8080/player").subscribe((data)=>{

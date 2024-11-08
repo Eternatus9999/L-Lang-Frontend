@@ -51,7 +51,7 @@ export class RegisterComponent {
       this.player.password = this.password;
       this.player.gender = this.gender;
       
-      this.http.post("http://localhost:8080/player/add-player",this.player).subscribe(data=>{
+      this.http.post("http://localhost:8080/player/add-player",this.player).subscribe(res=>{
         this.showMessage("Register Successfull");
         localStorage.setItem("Name",this.name);
         this.router.navigate(["/dashboard"]);

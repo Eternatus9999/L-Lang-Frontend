@@ -17,19 +17,23 @@ h1{
 }
 .col-lg-3 button{
     margin-left: 120px;
+    width: 80%;
 }
 .col-xxl-4 button{
     margin-left: 300px;
+    width: 50%;
 }
 .col-xl-4 button{
-    margin-left: 150px;
+    margin-left: 100px;
+    width: 80%;
+
 }
 button{
     margin-top: 30px;
     margin-left: 200px;
     font-size: 50px;
+    width: 80%;
     border-radius: 20px;
-    width: 50%;
     background-color: #A55EEA;
 }
 a{
