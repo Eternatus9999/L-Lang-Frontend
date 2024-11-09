@@ -33,7 +33,7 @@ button{
     width: 50%;
     background-color: #A55EEA;
 }
-a{
+a, h1{
     text-decoration: none;
     color: white;
 }
