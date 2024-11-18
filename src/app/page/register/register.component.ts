@@ -28,8 +28,6 @@ export class RegisterComponent {
   constructor(private http:HttpClient,private router:Router){}
 
   public sendName(){
-    console.log("Hello");
-    
      if(this.name === ""){
       this.showError("Enter an Username");
      }
@@ -51,7 +49,7 @@ export class RegisterComponent {
       this.player.password = this.password;
       this.player.gender = this.gender;
       
-      this.http.post("http://localhost:8080/player/add-player",this.player).subscribe(res=>{
+      this.http.post("http://localhost:8080/player/add-player",this.player).subscribe(data=>{
         this.showMessage("Register Successfull");
         localStorage.setItem("Name",this.name);
         this.router.navigate(["/dashboard"]);
